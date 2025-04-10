@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ✅ Character encoding to support Telugu and English -->
+    <meta charset="UTF-8" />
+
+    <!-- ✅ Makes website responsive across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Page title appears in browser tab and search results -->
+    <title>🔖 Ticket Booking | టికెట్ బుకింగ్ - శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం</title>
+
+    <!-- 🔍 ✅ SEO Meta Tags for better Google and search engine indexing (supports English and Telugu keywords) -->
+    <meta name="description" content="Book online tickets for monthly and one-time poojas at Sri Poleramma Temple, Chirala. శ్రీ పోలేరమ్మ తల్లి దేవస్థానంలో నెలసరి మరియు ఒక్కసారి పూజల కోసం ఆన్‌లైన్ టిక్కెట్ల బుకింగ్ చేయండి." />
+    <meta name="keywords" content="Poleramma Temple Booking, Temple Pooja Ticket, Monthly Pooja Booking, One-time Pooja, Temple Ticket Online, Chirala Temple, Telugu Temple Booking, టికెట్ బుకింగ్, పూజా బుకింగ్, నెలసరి పూజా, ఒక్కసారి పూజా, పోలేరమ్మ తల్లి, చీరాల ఆలయం, పూజ టికెట్" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Poleramma Temple Committee, Chirala" />
+    <meta name="language" content="te,en" />
+    <meta name="google-site-verification" content="<!-- Optional: Your Google Site Verification Code -->" />
+
+    <!-- 🌐 ✅ Open Graph Meta Tags for social sharing previews (Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="🔖 Ticket Booking | టికెట్ బుకింగ్ - పోలేరమ్మ తల్లి దేవస్థానం" />
+    <meta property="og:description" content="Online ticket booking for monthly & one-time poojas at Chirala Poleramma Temple. నెలసరి మరియు ఒక్కసారి పూజల కోసం టికెట్ బుక్ చేయండి." />
+    <meta property="og:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
+    <meta property="og:url" content="https://poleramma.com/booking.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="te_IN" />
+
+    <!-- 🐦 ✅ Twitter Card for better appearance when sharing on Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ticket Booking | టికెట్ బుకింగ్ - Poleramma Temple, Chirala" />
+    <meta name="twitter:description" content="Book your pooja tickets online for Poleramma Temple, Chirala. Easy monthly and one-time bookings. ఒక క్లిక్‌తో టికెట్ బుక్ చేయండి!" />
+    <meta name="twitter:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
+
+    <!-- 📈 ✅ Structured data using Schema.org for search engines like Google to better understand the content -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Poleramma Temple Ticket Booking | పోలేరమ్మ ఆలయ టికెట్ బుకింగ్",
+      "description": "Book tickets online for monthly and one-time poojas at Sri Poleramma Temple, Chirala. Secure payment, instant confirmation. నెలసరి మరియు ఒక్కసారి పూజలకు టికెట్ బుకింగ్ చేయండి.",
+      "startDate": "2025-04-10",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Sri Sri Sri Poleramma Temple",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chirala",
+          "addressRegion": "Andhra Pradesh",
+          "addressCountry": "IN"
+        }
+      },
+      "image": [
+        "https://poleramma.com/templeimage/1742626228036%20(1).jpg"
+      ]
+    }
+    </script>
+
+    <!-- 🎨 ✅ External stylesheet and SweetAlert2 library for custom alerts -->
+    <link rel="stylesheet" href="CSS/booking.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  
+<body>
+
+<!-- 🔱 ✅ Header Section with Temple Branding and Navigation -->
+<header>
+  <div class="logo-container">
+    <!-- ✅ Temple Logo on both sides of the heading -->
+    <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo"/>
+    <h1>🌸 శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
+    <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo"/>
+  </div>
+
+  <!-- ✅ Page Subheading -->
+  <h3>🔖 టికెట్ బుకింగ్</h3>
+
+  <!-- ✅ Navigation menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="gallery.html">🖼️ Temple Updates</a></li>
+      <li><a href="booking.html" class="active">🔖 Booking Ticket</a></li>
+      <li><a href="donations.html">💰 Donations</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 🧾 ✅ Booking Section for Monthly and One-Time Poojas -->
+<section class="booking-container">
+
+  <!-- ✅ Monthly Pooja Booking Form -->
+  <div class="booking-form">
+    <h2>📜 Monthly Pooja Booking</h2>
+    <form id="monthlyForm">
+      <!-- ✅ User Full Name -->
+      <label>👤 Full Name</label>
+      <input type="text" id="monthlyName" name="Full Name" required/>
+
+      <!-- ✅ User Phone Number with 10-digit validation -->
+      <label>📞 Phone Number</label>
+      <input type="tel" id="monthlyPhone" name="Phone Number" pattern="[0-9]{10}" required/>
+
+      <!-- ✅ Booking Start Month -->
+      <label>📅 Start Month</label>
+      <input type="month" id="startMonth" name="Start Month" required/>
+
+      <!-- ✅ Booking End Month -->
+      <label>📅 End Month</label>
+      <input type="month" id="endMonth" name="End Month" required/>
+
+      <!-- ✅ Submit Button -->
+      <button type="submit" class="monthly-btn">🛕 Book Now</button>
+    </form>
+  </div>
+
+  <!-- ✅ One-Time Pooja Booking Form -->
+  <div class="booking-form">
+    <h2>📜 One-Time Pooja Booking</h2>
+    <form id="oneTimeForm">
+      <!-- ✅ User Full Name -->
+      <label>👤 Full Name</label>
+      <input type="text" id="oneTimeName" name="Full Name" required/>
+
+      <!-- ✅ Phone Number Input -->
+      <label>📞 Phone Number</label>
+      <input type="tel" id="oneTimePhone" name="Phone Number" pattern="[0-9]{10}" required/>
+
+      <!-- ✅ Booking Date -->
+      <label>📅 Choose Date</label>
+      <input type="date" id="oneTimeDate" name="Booking Date" required/>
+
+      <!-- ✅ Time Slot Selection -->
+      <label>⏰ Select Time</label>
+      <select id="oneTimeSlot" name="Time Slot">
+        <option value="6:00 AM">6:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="6:00 PM">6:00 PM</option>
+      </select>
+
+      <!-- ✅ Submit Button -->
+      <button type="submit" class="one-time-btn">🛕 Book Now</button>
+    </form>
+  </div>
+</section>
+
+<!-- 🔄 ✅ Hidden spinner shown during form submission (can be toggled via JS) -->
+<div id="spinner" class="spinner hidden"></div>
+
+<!-- ⚙️ ✅ JavaScript logic for handling form validation and submission -->
+<script src="booking.js"></script>
+
+</body>
+</html>

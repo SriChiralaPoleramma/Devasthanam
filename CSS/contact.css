@@ -1,0 +1,250 @@
+/* 🌸 General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/temple-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 🌿 Header Styling */
+header {
+    background: linear-gradient(to right, #ff9800, #e65100);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 5px solid #ff6f00;
+}
+
+/* 🏩 Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.header-logo {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform 0.3s;
+}
+
+.header-logo:hover {
+    transform: scale(1.1);
+}
+
+/* 🏠 Navigation Bar */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline;
+}
+
+/* ✨ Golden-Orange Navigation Buttons */
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff9800, #ffcc33);
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid #d4a017;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(45deg, #ff6f00, #ffb300);
+    transform: scale(1.1);
+}
+
+/* 🌟 Contact Page Layout */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 40px;
+}
+
+/* 🌿 Shared Box Styling */
+.contact-info, .contact-form {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 50px;
+    width: 75%;
+    border-radius: 20px;
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+}
+
+.contact-info:hover, .contact-form:hover {
+    transform: scale(1.02);
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e65100;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px #ffd54f;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #444;
+}
+
+/* 🏝️ Form Styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #e65100;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out, box-shadow 0.2s;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ff9800;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(255, 152, 0, 0.5);
+}
+
+.contact-form button {
+    background: linear-gradient(45deg, #ff9800, #e65100);
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(45deg, #ff6f00, #ffb300);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.8);
+}
+
+/* 🌺 Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #b8860b, #e65100);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px 30px 0 0;
+}
+
+/* 📱 Responsive Design */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .contact-info, .contact-form {
+        width: 85%;
+    }
+
+    .contact-form button {
+        font-size: 17px;
+        padding: 13px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+
+    .header-logo {
+        width: 70px;
+    }
+
+    .contact-info, .contact-form {
+        width: 95%;
+        padding: 35px 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .contact-info h2, .contact-form h2 {
+        font-size: 22px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact-form button {
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+}

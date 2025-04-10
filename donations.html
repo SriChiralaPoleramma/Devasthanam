@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ✅ Meta Information -->
+    <meta charset="UTF-8" /> <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures mobile responsiveness -->
+
+    <!-- 🔖 Page Title (Appears in browser tab) -->
+    <title>💰 Donate to Poleramma Temple | పోలేరమ్మ ఆలయానికి విరాళం 💰</title>
+
+    <!-- 🔍 SEO Meta Tags (Dual-language: English + Telugu) -->
+    <meta name="description" content="Support Sri Sri Sri Chirala Poleramma Temple through donations. Donate via UPI, PhonePe, Google Pay, or Bank transfer. పోలేరమ్మ ఆలయానికి విరాళంగా మీ తోడ్పాటును అందించండి." />
+    <meta name="keywords" content="Poleramma Temple Donations, Donate to Temple, Temple UPI Payment, PhonePe Google Pay Temple, Temple Support, Chirala Temple, పోలేరమ్మ తల్లి విరాళాలు, ఆలయానికి విరాళం, చీరాల ఆలయం, పూజ విరాళం, UPI విరాళం, గూగుల్ పే ఆలయం, బ్యాంక్ డొనేషన్" />
+    <meta name="robots" content="index, follow" /> <!-- Search engines should index and follow links -->
+    <meta name="author" content="Poleramma Temple Committee, Chirala" />
+    <meta name="language" content="te,en" />
+
+    <!-- 🌐 Social Media Sharing - Open Graph (for Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="💰 Donate to Poleramma Temple | పోలేరమ్మ తల్లి విరాళాలు 💰" />
+    <meta property="og:description" content="Help preserve the divine traditions. Contribute to Chirala Poleramma Temple online via secure UPI, PhonePe, Google Pay or Bank Transfer. ఆలయ సేవకు మీ తోడ్పాటు ఇవ్వండి." />
+    <meta property="og:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
+    <meta property="og:url" content="https://poleramma.com/donations.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="te_IN" />
+
+    <!-- 🐦 Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="💰 Donate to Poleramma Temple | ఆలయ విరాళాలు 💰" />
+    <meta name="twitter:description" content="Donate to support rituals and development of Sri Poleramma Temple, Chirala. Contribute online today. శ్రీ పోలేరమ్మ ఆలయ అభివృద్ధికి మీరు కూడా భాగస్వామి కావచ్చు." />
+    <meta name="twitter:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
+
+    <!-- 📈 Structured Data using JSON-LD for better search indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DonateAction",
+      "name": "Poleramma Temple Donation",
+      "description": "Donate to Sri Sri Sri Poleramma Temple in Chirala. Support the temple via UPI, PhonePe, Google Pay, or bank transfer.",
+      "recipient": {
+        "@type": "Organization",
+        "name": "Sri Sri Sri Poleramma Temple",
+        "url": "https://poleramma.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chirala",
+          "addressRegion": "Andhra Pradesh",
+          "addressCountry": "IN"
+        }
+      },
+      "target": "https://poleramma.com/donations.html"
+    }
+    </script>
+
+    <!-- 🎨 External CSS for styling and SweetAlert2 for modern alerts -->
+    <link rel="stylesheet" href="CSS/donations.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <!-- 🌸 Temple Header with Logos and Navigation -->
+    <header>
+        <div class="logo-container">
+            <!-- Left Logo -->
+            <img src="templeimage/1742626228036 (1).jpg" alt="Left Logo" class="header-logo">
+            <h1>🌸 శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
+            <!-- Right Logo -->
+            <img src="templeimage/1742626228036 (1).jpg" alt="Right Logo" class="header-logo">
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="gallery.html">🖼️ Temple Updates</a></li>
+                <li><a href="booking.html">🔖 Ticket Booking</a></li>
+                <li><a href="donations.html">💰 Donations</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 🙏 Main Donation Information Section -->
+    <section class="donation-section">
+        <h2>🌺 Support the Temple 🌺</h2>
+        <div class="donation-methods">
+            <h3>✨ Ways to Contribute ✨</h3>
+            <!-- Donation Methods Display -->
+            <p><strong>📞 PhonePe / Google Pay:</strong> 9876543210</p>
+            <p><strong>📲 UPI Payment:</strong> polerammatemple@upi</p>
+            <p><strong>🏛️ Donate in Person:</strong> Visit the temple office.</p>
+            <p><strong>🏦 Bank Transfer:</strong> A/C No: 1234567890, IFSC: XYZB0000123</p>
+        </div>
+        
+        <!-- Button that reveals QR code -->
+        <button id="donateButton">Show Donation QR</button>
+
+        <!-- 🔐 QR Section - Initially hidden -->
+        <div id="qrSection" class="qr-section" style="display: none;">
+            <h3>📸 Scan & Contribute with Blessings 🙏</h3>
+            <img src="images/qr-code.png" alt="Donation QR Code">
+            <p>📸 Share payment screenshot to this number: <strong>9876543210</strong></p>
+        </div>
+    </section>
+
+    <!-- 📞 Contact & Inquiry Form -->
+    <section class="donation-section">
+        <h2>📞 Have Questions? We Are Here to Help! 🙏</h2>
+        <p>If you have any concerns regarding donations, temple services, or upcoming rituals, please reach out to us.</p>
+        <div class="contact-info">
+            <h3>📌 Contact the Temple Office</h3>
+            <p><strong>📍 Phone:</strong> +91 98765 43210</p>
+            <p><strong>📧 Email:</strong> support@polerammatemple.com</p>
+        </div>
+
+        <!-- 📬 Donation/Inquiry Form -->
+        <h3>💬 Submit Your Inquiry 💬</h3>
+        <form id="donationForm" class="donation-form">
+            <label for="name">📝 Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">📩 Your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">📞 Your Contact Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your contact number" required>
+
+            <label for="message">✍️ Your Message:</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <!-- 🌺 Footer -->
+    <footer>
+        <p>&copy; 2025 Sri Chirala Poleramma Temple | May the Divine Bless You 🙏</p>
+    </footer>
+
+    <!-- 🧠 Custom JavaScript to handle interactivity -->
+    <script src="donations.js"></script>
+</body>
+</html>

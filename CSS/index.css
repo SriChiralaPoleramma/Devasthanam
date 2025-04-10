@@ -1,0 +1,360 @@
+/* 🌸 General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('images/temple-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth scrolling for navigation */
+}
+
+/* 🌿 Header Styling */
+header {
+  background: linear-gradient(to right, #ff9800, #e65100); /* Gradient header */
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); /* Shadow effect for header */
+  border-bottom: 5px solid #ff6f00; /* Bold border at the bottom */
+}
+
+/* 🏩 Logo Styling */
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.header-logo {
+  width: 90px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid white;
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  margin: 0 10px;
+}
+
+.header-logo:hover {
+  transform: scale(1.1); /* Logo scaling effect on hover */
+  box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.7); /* Shadow effect on hover */
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, #ff4500, #ffd700); /* Gradient background */
+  padding: 15px;
+  border-radius: 20px; /* Rounded corners */
+  margin: 15px auto;
+  width: 90%;
+  box-shadow: 0px 5px 10px rgba(255, 140, 0, 0.3); /* Subtle shadow */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Spacing between links */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s, letter-spacing 0.2s;
+}
+
+nav ul li a:hover {
+  color: #12de16ca; /* Hover color */
+  transform: scale(1.1); /* Scale effect on hover */
+  letter-spacing: 1px; /* Letter spacing on hover */
+}
+
+/* 🔥 Hero Section */
+.hero {
+  position: relative;
+  height: 350px;
+  background: url('../images/temple-banner-gold.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 3px 3px 8px rgba(255, 69, 0, 0.9); /* Text shadow effect */
+  border-bottom: 6px solid #ff4500; /* Border at the bottom */
+  padding: 10px;
+}
+
+/* Optional Overlay Styling */
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Cards for content sections */
+.card {
+  background: rgba(255, 215, 0, 0.85); /* Golden background */
+  padding: 25px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(255, 69, 0, 0.8); /* Shadow for cards */
+  border: 4px solid #ff4500; /* Border color */
+  max-width: 900px;
+  text-align: center;
+  color: #000;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Hover effect for lift */
+  box-shadow: 0px 10px 20px rgba(255, 69, 0, 0.8); /* Increased shadow on hover */
+}
+
+/* Image Gallery Section */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.image-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow around images */
+  background: #f7f7f7; /* Light background */
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin: 10px 0;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
+
+.image-card:hover {
+  transform: scale(1.05); /* Hover scale effect */
+}
+
+/* Play button */
+.play-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4500, #ff2f00); /* Gradient for button */
+  color: #000;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(255, 140, 0, 0.7); /* Button shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.2rem;
+}
+
+.play-button:hover {
+  transform: scale(1.1); /* Hover effect for button */
+  box-shadow: 0px 4px 15px rgba(255, 69, 0, 0.7); /* Shadow effect on hover */
+}
+
+/* Countdown section */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+/* Temple history section */
+.temple-history p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.temple-history .highlighted-text {
+  background: linear-gradient(45deg, #ff4500, #ffd700); /* Gradient for highlighted text */
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(255, 140, 0, 0.7); /* Shadow for highlighted text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+  border: 3px solid #ff4500; /* Border around highlighted text */
+}
+
+/* Footer Section */
+footer {
+  background: hsla(0, 2%, 16%, 0.945); /* Dark footer background */
+  text-align: center;
+  padding: 20px;
+  border-top: 5px solid #ff4500; /* Top border for footer */
+  box-shadow: 0px -5px 15px hwb(24 0% 0% / 0.994); /* Footer shadow */
+  font-size: 1.1rem;
+  color: hwb(27 91% 5% / 0.92);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column; /* Stack logo vertically */
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation links vertically */
+    gap: 15px;
+  }
+
+  .hero {
+    height: 250px;
+    font-size: 1.8rem;
+    padding: 8px;
+  }
+
+  .card {
+    width: 90%; /* Reduce card width on smaller screens */
+  }
+
+  .image-card {
+    width: 90%; /* Reduce image width */
+    max-width: 100%;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .play-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  #timer {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+
+/* 🌐 =========================== 
+ 📱 Mobile Styles (max 600px) 
+ =========================== */
+@media (max-width: 600px) {
+  header {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-logo {
+    width: 80px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .section {
+    padding: 30px 10px;
+  }
+
+  .image-card, .video-card {
+    max-width: 100%;
+  }
+
+  .play-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* 🖥️ ================================ 
+ Tablets and Small Laptops (601–992px)
+ ================================ */
+@media (min-width: 601px) and (max-width: 992px) {
+  .logo-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .image-card, .video-card {
+    max-width: 90%;
+  }
+
+  .media-container, .events-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid layout for media */
+  }
+}
+
+/* 🖥️ ======================= 
+ Large Desktop Styles (993px+) 
+ ======================= */
+@media (min-width: 993px) {
+  .logo-container {
+    max-width: 1200px;
+    margin: auto; /* Centered logo container */
+  }
+
+  .image-card, .video-card {
+    max-width: 400px;
+  }
+
+  .media-container, .events-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid layout for media */
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+}
