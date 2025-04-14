@@ -88,53 +88,62 @@
     </ul>
   </nav>
 </header>
+<section class="booking-description-section">
+  <p class="booking-description">
+      నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో, వారి కుటుంబ సభ్యుల గోత్రనామాలతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.  
+      అమ్మవారి నెల ప్రసాదం కూడా అందించబడుతుంది.  
+      📅 మీ స్లాట్‌లను  బుక్ చేసుకోండి(Book your Slots).  
+      📞 వివరాలకు సంప్రదించండి: <a href="tel:9876543210"><strong>9876543210</strong></a>
+  </p>
+</section>
 
 <!-- 🧾 ✅ Booking Section for Monthly and One-Time Poojas -->
 <section class="booking-container">
 
   <!-- ✅ Monthly Pooja Booking Form -->
   <div class="booking-form">
-    <h2>📜 Monthly Pooja Booking</h2>
+    <h2>📜 నెలవారీ పూజా బుకింగ్</h2>
     <form id="monthlyForm">
       <!-- ✅ User Full Name -->
-      <label>👤 Full Name</label>
+      <label>👤 పేరు</label>
       <input type="text" id="monthlyName" name="Full Name" required/>
 
       <!-- ✅ User Phone Number with 10-digit validation -->
-      <label>📞 Phone Number</label>
+      <label>📞 ఫోన్ నంబర్</label>
       <input type="tel" id="monthlyPhone" name="Phone Number" pattern="[0-9]{10}" required/>
 
       <!-- ✅ Booking Start Month -->
-      <label>📅 Start Month</label>
+      <label>📅 ప్రారంభ నెల</label>
       <input type="month" id="startMonth" name="Start Month" required/>
 
       <!-- ✅ Booking End Month -->
-      <label>📅 End Month</label>
+      <label>📅 ముగింపు నెల</label>
       <input type="month" id="endMonth" name="End Month" required/>
+      
 
       <!-- ✅ Submit Button -->
-      <button type="submit" class="monthly-btn">🛕 Book Now</button>
+      <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి</button>
     </form>
   </div>
 
   <!-- ✅ One-Time Pooja Booking Form -->
   <div class="booking-form">
-    <h2>📜 One-Time Pooja Booking</h2>
+    <h2>📜 ఒకసారి పూజా బుకింగ్</h2>
     <form id="oneTimeForm">
       <!-- ✅ User Full Name -->
-      <label>👤 Full Name</label>
+      <label>👤 పేరు</label>
       <input type="text" id="oneTimeName" name="Full Name" required/>
 
       <!-- ✅ Phone Number Input -->
-      <label>📞 Phone Number</label>
+      <label>📞 ఫోన్ నంబర్</label>
       <input type="tel" id="oneTimePhone" name="Phone Number" pattern="[0-9]{10}" required/>
 
       <!-- ✅ Booking Date -->
-      <label>📅 Choose Date</label>
+      <label>📅 తేదీ ఎంచుకోండి</label>
       <input type="date" id="oneTimeDate" name="Booking Date" required/>
 
       <!-- ✅ Time Slot Selection -->
-      <label>⏰ Select Time</label>
+      <label>⏰  సమయం ఎంచుకోండి</label>
       <select id="oneTimeSlot" name="Time Slot">
         <option value="6:00 AM">6:00 AM</option>
         <option value="12:00 PM">12:00 PM</option>
@@ -151,7 +160,7 @@
 <div id="spinner" class="spinner hidden"></div>
 
 <!-- ⚙️ ✅ JavaScript logic for handling form validation and submission -->
-<script src="booking.js"></script>
+<script src="js/booking.js"></script>
 
 </body>
 </html>
