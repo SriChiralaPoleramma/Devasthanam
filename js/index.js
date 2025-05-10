@@ -36,3 +36,56 @@ function updateCountdown() {
 
 // Update the countdown every second
 setInterval(updateCountdown, 1000);
+
+    // Smooth scrolling with offset
+
+$(document).ready(function() {
+    $('nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - $('header').outerHeight() // Adjust for fixed header
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Scrollspy (Navigation Highlighting)
+    $(window).on('scroll', function() {
+        var scrollPos = $(window).scrollTop();
+        $('nav a').each(function() {
+            var target = $(this).attr('href');
+            var targetOffset = $(target).offset().top - $('header').outerHeight();
+            var targetBottom = targetOffset + $(target).outerHeight();
+            if (scrollPos >= targetOffset && scrollPos < targetBottom) {
+                $('nav a').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+
+        // Back-to-Top Button Visibility
+        if ($(this).scrollTop() > 200) {
+            $('#back-to-top-btn').fadeIn();
+        } else {
+            $('#back-to-top-btn').fadeOut();
+        }
+    });
+
+    // Back-to-Top Button Functionality
+    $('#back-to-top-btn').on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        $('nav a').removeClass('active');
+        $('nav a[href="#home"]').addClass('active'); // Optionally highlight Home on top
+    });
+
+    // Initial active link on load
+    if (window.location.hash) {
+        $('nav a').removeClass('active');
+        $('nav a[href="' + window.location.hash + '"]').addClass('active');
+        $('html, body').scrollTop($(window.location.hash).offset().top - $('header').outerHeight());
+    } else {
+        $('nav a[href="#home"]').addClass('active'); // Set Home as active by default
+    }
+});
