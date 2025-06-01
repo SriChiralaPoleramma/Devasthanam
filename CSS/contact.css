@@ -3,20 +3,19 @@ body {
     font-family: 'Poppins', sans-serif;
     background: url('images/temple-bg.jpg') no-repeat center center fixed;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 6px;
     color: #333;
     line-height: 1.6;
-    /* Removed scroll-behavior: smooth; here, as JavaScript will handle it for navigation */
 }
 
 /* 🌿 Header Styling */
 header {
     background: linear-gradient(to right, #ff9800, #e65100);
     color: white;
-    padding: 15px 0;
+    padding: 0px 0;
     text-align: center;
-    font-size: 15px;
+    font-size: 8px;
     font-weight: bold;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
     border-bottom: 5px solid #ff6f00;
@@ -48,7 +47,7 @@ header {
 
 /* 🏠 Navigation Bar */
 nav {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 nav ul {
@@ -56,7 +55,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -67,12 +66,12 @@ nav ul li {
 /* ✨ Golden-Orange Navigation Buttons */
 nav ul li a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
     background: linear-gradient(45deg, #ff9800, #ffcc33);
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 8px 1px;
+    border-radius: 25px;
     transition: all 0.3s ease-in-out;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
     border: 2px solid #d4a017;
@@ -80,8 +79,9 @@ nav ul li a {
 
 nav ul li a:hover {
     background: linear-gradient(45deg, #ff6f00, #ffb300);
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
+
 
 /* 🌟 Contact Page Layout */
 .content {
@@ -191,12 +191,12 @@ footer {
 /* Mobiles */
 @media (max-width: 768px) {
     header {
-        font-size: 20px;
-        padding: 15px 0;
+        font-size: 6px;
+        padding: 6px ;
     }
 
     .header-logo {
-        width: 70px;
+        width: 50px;
     }
 
     .contact-info, .contact-form {
@@ -207,11 +207,13 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap :25px 6px;
     }
 
     nav ul li a {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 10px;
+        padding: 10px 9px;
+        
     }
 
     .contact-form input,

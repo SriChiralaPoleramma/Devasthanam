@@ -52,7 +52,6 @@
             <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo" />
             <h1>🌸 శ్రీ శ్రీ శ్రీ  పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
              <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo" />
-
         </div>
         <nav>
             <ul>
@@ -65,13 +64,13 @@
         </nav>
     </header>
     <section class="booking-description-section" id="home">
-  <p class="booking-description">
-        నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో, వారి కుటుంబ సభ్యుల గోత్రనామాలతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.  
-        అమ్మవారి నెల ప్రసాదం కూడా అందించబడుతుంది.  
-        📅 మీ స్లాట్‌లను  బుక్ చేసుకోండి(Book your Slots).  
-        📞 వివరాలకు సంప్రదించండి: <a href="tel:9876543210"><strong>9876543210</strong></a>
-  </p>
-</section>
+        <p class="booking-description">
+            నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో, వారి కుటుంబ సభ్యుల గోత్రనామాలతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.
+            అమ్మవారి నెల ప్రసాదం కూడా అందించబడుతుంది.
+            📅 మీ స్లాట్‌లను  బుక్ చేసుకోండి(Book your Slots).
+            📞 వివరాలకు సంప్రదించండి: <a href="tel:9876543210"><strong>9876543210</strong></a>
+        </p>
+    </section>
 
     <section class="booking-container" id="booking">
         <div class="booking-form">
@@ -79,28 +78,25 @@
             <form id="monthlyForm" novalidate>
                 <label for="monthlyName">👤 పేరు</label>
                 <input type="text" id="monthlyName" required placeholder="మీ పేరు" aria-label="Enter your name" />
-                
+
                 <label for="monthlyPhone">📞 ఫోన్ నంబర్</label>
                 <input type="tel" id="monthlyPhone" required pattern="[0-9]{10}" placeholder="10 అంకెల నంబర్" aria-label="Enter your phone number" />
-                
+
                 <label for="monthlyGothram">🕉️ గోత్రం (Optional)</label>
                 <input type="text" id="monthlyGothram" placeholder="ఉదా: వాసిష్ఠ" />
-                
+
                 <label for="monthlyFamily">👪 కుటుంబ సభ్యుల పేర్లు (Optional)</label>
                 <textarea id="monthlyFamily" rows="2" placeholder="ఉదా: రాము, సీత, లక్ష్మి"></textarea>
-                
+
                 <label for="startMonth">📅 ప్రారంభ నెల</label>
                 <input type="month" id="startMonth" required />
-                
+
                 <label for="endMonth">📅 ముగింపు నెల</label>
                 <input type="month" id="endMonth" required />
-                
-                <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి</button>
+
+                <button type="button" class="monthly-btn" id="payButton">💰 Proceed to Pay ₹ 101</button>
             </form>
         </div>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <button id="openTicketButton" class="hidden">Open Ticket</button>
-        <button id="closeTicketButton" class="hidden">Close Ticket</button>
 
         <section id="bookingSuccessDetails" class="booking-success-section hidden">
             <div class="ticket-card">
@@ -129,7 +125,7 @@
         </section>
     </section>
 
-    <div id="spinner" class="spinner hidden"></div>
+    <div id="spinner" class="spinner hidden">Processing...</div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -143,6 +139,7 @@
             });
         });
     </script>
-    <script src="js/l.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="js/k.js"></script>
 </body>
 </html>

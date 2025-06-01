@@ -1,137 +1,157 @@
 /* ==========================================================================
-   CSS for Sri Sri Sri Chirala Poleramma Talli Devasthanam Website
-   Author: Sri Poleramma Temple Trust
-   Date: May 9, 2025
-   Location: Chirala, Andhra Pradesh, India
-   ========================================================================== */
+    CSS for Sri Sri Sri Chirala Poleramma Talli Devasthanam Website
+    Author: Sri Poleramma Temple Trust
+    Date: May 16, 2025
+    Location: Chirala, Andhra Pradesh, India
+    ========================================================================== */
 
 /* ==========================================================================
-   1. General Styles
-   ========================================================================== */
+    1. General Styles
+    ========================================================================== */
 
+/* 🌸 General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background: url('images/temple-bg.jpg') no-repeat center center fixed;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 6px;
     color: #333;
     line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scrolling for navigation and direct links */
+    /* Removed scroll-behavior: smooth; here, as JavaScript will handle it for navigation */
 }
 
-/* ==========================================================================
-   2. Header Styles
-   ========================================================================== */
-
+/* 🌿 Header Styling for All Devices */
 header {
-    background: linear-gradient(to right, #ff9800, #e65100); /* Gradient header */
+    background: linear-gradient(to right, #ff9800, #e65100);
     color: white;
-    padding: 8px 0;
+    padding: 10px 0; /* Reduced vertical padding */
     text-align: center;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #ff6f00;
-    position: fixed;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 4px solid #ff6f00;
+    position: sticky; /* Make the header sticky */
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 100;
 }
 
+/* Adjust header font size for smaller screens */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.1rem; /* Slightly smaller font on medium screens */
+        padding: 8px 0; /* Further reduced vertical padding on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        font-size: 1rem; /* Even smaller font on small screens */
+        padding: 6px 0; /* Minimum vertical padding on small screens */
+    }
+}
 /* ==========================================================================
-   3. Logo Styles
-   ========================================================================== */
+    3. Logo Styles
+    ========================================================================== */
 
 .logo-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 3px 8px;
+    padding: 10px 8px;
 }
 
 .header-logo {
-    width: 45px;
+    width: 60px;
     height: auto;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 2px solid white;
     transition: transform 0.3s, box-shadow 0.3s ease-in-out;
-    margin: 0 3px;
-}
-
-.header-logo:hover {
-    transform: scale(1.03);
+    margin: 0 10px; /* Added horizontal margin for spacing */
     box-shadow: 0px 2px 8px rgba(255, 69, 0, 0.5);
 }
 
+.header-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(255, 69, 0, 0.7);
+}
+
 header h1 {
-    font-size: 1rem;
-    margin: 0 5px;
+    font-size: 1.4rem;
+    margin: 0 15px; /* Added horizontal margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
-   4. Navigation Bar Styles
-   ========================================================================== */
+    4. Navigation Bar Styles
+    ========================================================================== */
 
 nav {
-    display: flex;
-    justify-content: center;
     background: linear-gradient(90deg, #ff4500, #ffd700);
-    padding: 8px;
-    border-radius: 10px;
-    margin: 8px auto;
-    width: 97%;
-    box-shadow: 0px 2px 6px rgba(255, 140, 0, 0.15);
+    padding: 10px;
+    border-radius: 12px;
+    margin: 15px auto;
+    width: 95%; /* Adjusted width */
+    box-shadow: 0px 4px 8px rgba(255, 140, 0, 0.2);
+    display: flex; /* Enable flexbox for horizontal layout */
+    justify-content: center; /* Center the buttons horizontally */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    gap: 10px;
+    display: flex; /* Enable flexbox for the list items */
+    flex-direction: row; /* Arrange items in a row */
+    gap: 15px; /* Spacing between buttons */
+    align-items: center; /* Vertically align items in the center */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    transition: color 0.3s, transform 0.3s, letter-spacing 0.2s;
-    padding: 3px 6px;
-    border-radius: 3px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s, color 0.3s;
+    padding: 12px 18px; /* Adjusted horizontal padding */
+    border-radius: 8px;
+    background-color: #ff8c00;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li a:hover {
-    color: #12de16ca;
-    transform: scale(1.02);
-    letter-spacing: 0.3px;
+    background-color: #e65100;
+    transform: scale(1.03);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 nav a.active {
-    color: #12de16ca;
+    background-color: #12de16ca;
+    color: white;
 }
 
 /* ==========================================================================
-   5. Back-to-Top Button Style
-   ========================================================================== */
+    5. Back-to-Top Button Style
+    ========================================================================== */
 
 #back-to-top-btn {
     display: none;
     position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
     z-index: 99;
     border: none;
     outline: none;
-    background-color: rgba(255, 140, 0, 0.6);
+    background-color: rgba(255, 140, 0, 0.7);
     color: white;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 3px;
-    font-size: 0.8rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
     transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #back-to-top-btn:hover {
@@ -139,265 +159,59 @@ nav a.active {
 }
 
 /* ==========================================================================
-   6. Main Content Padding
-   ========================================================================== */
+    6. Main Content Padding
+    ========================================================================== */
 
 main {
-    padding-top: calc(header.outerHeight() + 8px);
+    padding-top: calc(header.outerHeight() + 15px);
 }
 
 /* ==========================================================================
-   7. Footer Section Style (REVISED FOR CENTER ALIGNMENT)
-   ========================================================================== */
+    7. Footer Section Style
+    ========================================================================== */
 
 footer {
-    background: hsla(0, 2%, 16%, 0.945); /* Dark footer background */
-    text-align: center; /* Center align the text within the footer */
-    padding: 20px;
-    border-top: 2px solid #ff4500; /* Thinner top border for consistency */
-    box-shadow: 0px -2px 8px hwb(24 0% 0% / 0.8); /* More subtle footer shadow */
-    font-size: 0.9rem; /* Slightly smaller font size for the footer */
+    background: hsla(0, 2%, 16%, 0.945);
+    text-align: center;
+    padding: 25px;
+    border-top: 3px solid #ff4500;
+    box-shadow: 0px -2px 8px hwb(24 0% 0% / 0.8);
+    font-size: 1rem;
     color: hwb(27 91% 5% / 0.92);
 }
 
 footer p {
-    margin-bottom: 5px; /* Add a little spacing between lines if needed */
+    margin-bottom: 8px;
 }
 
 /* ==========================================================================
-   8. Responsive Adjustments
-   ========================================================================== */
+    8. Responsive Adjustments
+    ========================================================================== */
 
-/* 📱 Extra Small Devices (max-width: 576px) */
-@media (max-width: 576px) {
-    header {
-        font-size: 10px;
-        padding: 6px 0;
-    }
-
-    .logo-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 3px;
-    }
-
-    .header-logo {
-        width: 35px;
-    }
-
-    header h1 {
-        font-size: 0.8rem;
-        margin: 0;
-    }
-
-    nav {
-        width: 99%;
-        margin: 6px auto;
-        padding: 6px;
-        border-radius: 8px;
-    }
-
+/* Adjust for smaller screens where row might overflow */
+@media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
+        flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+        justify-content: center; /* Center buttons when wrapping */
+        gap: 10px; /* Adjust gap for wrapping */
     }
 
     nav ul li a {
-        font-size: 0.7rem;
-        padding: 5px 10px;
-    }
-
-    #back-to-top-btn {
-        bottom: 10px;
-        right: 10px;
-        padding: 6px 10px;
-        font-size: 0.7rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        padding: 15px 10px; /* Adjust padding for smaller screens */
-    }
-}
-
-/* 📱 Small Devices (min-width: 577px) and (max-width: 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
-    header {
-        font-size: 11px;
-        padding: 7px 0;
-    }
-
-    .header-logo {
-        width: 40px;
-    }
-
-    header h1 {
-        font-size: 0.9rem;
-    }
-
-    nav {
-        width: 98%;
-        padding: 7px;
-        border-radius: 9px;
-    }
-
-    nav ul {
-        gap: 9px;
-    }
-
-    nav ul li a {
-        font-size: 0.75rem;
-        padding: 5px 10px;
-    }
-
-    #back-to-top-btn {
-        bottom: 12px;
-        right: 12px;
-        padding: 7px 11px;
-        font-size: 0.75rem;
-    }
-
-    footer {
-        font-size: 0.85rem;
-        padding: 18px 12px;
-    }
-}
-
-/* 📱 Medium Devices (min-width: 769px) and (max-width: 992px) */
-@media (min-width: 769px) and (max-width: 992px) {
-    header {
-        font-size: 12px;
-        padding: 8px 0;
-    }
-
-    .header-logo {
-        width: 50px;
-    }
-
-    header h1 {
-        font-size: 1rem;
-    }
-
-    nav {
-        width: 97%;
-        padding: 8px;
-        border-radius: 10px;
-    }
-
-    nav ul {
-        gap: 10px;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    nav ul li a {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-
-    #back-to-top-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-
-    footer {
-        font-size: 0.9rem;
-        padding: 20px;
-    }
-}
-
-/* 🖥️ Large Devices (min-width: 993px) and (max-width: 1200px) */
-@media (min-width: 993px) and (max-width: 1200px) {
-    header {
-        font-size: 13px;
-        padding: 9px 0;
-    }
-
-    .header-logo {
-        width: 55px;
-    }
-
-    header h1 {
-        font-size: 1.1rem;
-    }
-
-    nav {
-        width: 95%;
-        padding: 9px;
-        border-radius: 12px;
-    }
-
-    nav ul {
-        gap: 12px;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-        padding: 7px 14px;
-    }
-
-    #back-to-top-btn {
-        bottom: 18px;
-        right: 18px;
-        padding: 9px 13px;
-        font-size: 0.9rem;
-    }
-
-    footer {
         font-size: 0.95rem;
-        padding: 22px;
+        padding: 10px 15px;
     }
 }
 
-/* 🖥️ Extra Large Devices (min-width: 1201px) */
-@media (min-width: 1201px) {
-    header {
-        font-size: 14px;
-        padding: 10px 0;
-    }
-
-    .header-logo {
-        width: 60px;
-    }
-
-    header h1 {
-        font-size: 1.2rem;
-    }
-
-    nav {
-        width: 90%;
-        padding: 10px;
-        border-radius: 15px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
+@media (max-width: 576px) {
     nav ul li a {
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
-
-    #back-to-top-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
-    footer {
-        font-size: 1rem;
-        padding: 25px;
+        font-size: 0.85rem;
+        padding: 8px 12px;
     }
 }
 
 /* ==========================================================================
-   Rest of your CSS (Hero, Cards, Gallery, etc.) - No changes needed for footer alignment
-   ========================================================================== */
+    Rest of your CSS (Hero, Cards, Gallery, etc.)
+    ========================================================================== */
 
 /* 🔥 Hero Section */
 .hero {
@@ -502,7 +316,7 @@ footer p {
 #timer {
     font-size: 2rem;
     font-weight: bold;
-    color: #ff4500;
+    color: hsl(16, 100%, 50%);
 }
 
 /* Temple history section */
@@ -516,4 +330,4 @@ footer p {
     color: white;
     padding: 12px;
     border-radius: 8px;
-    box-shadow: 0px 5px 10px rgba(255, 140, 0,
+    box-shadow: 0px 5px 10px rgba(255, 140, 0, 0.

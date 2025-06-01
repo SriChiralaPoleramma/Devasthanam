@@ -1,10 +1,10 @@
 /* 🌸 General Styling */
-
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f7f7f7, #f0f0f0);
-    margin: 0;
-    padding: 0;
+    background: url('images/temple-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 5px;
+    padding: 6px;
     color: #333;
     line-height: 1.6;
 }
@@ -13,42 +13,28 @@ body {
 header {
     background: linear-gradient(to right, #ff9800, #e65100);
     color: white;
-    padding: 15px 0;
+    padding: 2px 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 8px;
     font-weight: bold;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
     border-bottom: 5px solid #ff6f00;
-    background-size: 100% 200%;
-    animation: gradientAnimation 5s ease infinite;
     position: sticky; /* Make the header sticky */
     top: 0;
     z-index: 100;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
 /* 🏩 Logo Styling */
 .logo-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 
 .header-logo {
-    width: 80px;
+    width: 45px;
     height: auto;
     border-radius: 50%;
     border: 3px solid white;
@@ -61,7 +47,7 @@ header {
 
 /* 🏠 Navigation Bar */
 nav {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 nav ul {
@@ -69,7 +55,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -80,11 +66,11 @@ nav ul li {
 /* ✨ Golden-Orange Navigation Buttons */
 nav ul li a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     background: linear-gradient(45deg, #ff9800, #ffcc33);
-    padding: 10px 20px;
+    padding: 2px 6px;
     border-radius: 25px;
     transition: all 0.3s ease-in-out;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
@@ -93,7 +79,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background: linear-gradient(45deg, #ff6f00, #ffb300);
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 /* Booking Container */
@@ -163,7 +149,6 @@ nav ul li a:hover {
     font-weight: bold;
     padding: 14px;
     margin-top: 20px;
-    width: 100%;
     border-radius: 30px;
     border: none;
     cursor: pointer;
@@ -295,6 +280,26 @@ nav ul li a:hover {
     .booking-description-section {
         padding: 25px;
     }
+
+    /* Arrange Open/Close buttons in a row on smaller screens */
+    #openTicketButton,
+    #closeTicketButton {
+        display: inline-block; /* Make them inline elements */
+        margin: 10px 5px; /* Add some spacing */
+        padding: 10px 15px; /* Adjust padding as needed */
+        font-size: 16px; /* Adjust font size */
+        border-radius: 8px; /* Add some rounded corners */
+        background-color: #007bff; /* Example button color */
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #openTicketButton:hover,
+    #closeTicketButton:hover {
+        background-color: #0056b3;
+    }
 }
 
 /* Large screen adjustments */
@@ -321,6 +326,26 @@ nav ul li a:hover {
 
     .booking-description-section p {
         font-size: 22px;
+    }
+
+    /* Arrange Open/Close buttons in a row on larger screens */
+    #openTicketButton,
+    #closeTicketButton {
+        display: inline-block; /* Make them inline elements */
+        margin: 15px 10px; /* Add some spacing */
+        padding: 12px 20px; /* Adjust padding as needed */
+        font-size: 18px; /* Adjust font size */
+        border-radius: 10px; /* Add some rounded corners */
+        background-color: #007bff; /* Example button color */
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #openTicketButton:hover,
+    #closeTicketButton:hover {
+        background-color: #0056b3;
     }
 }
 
@@ -379,10 +404,6 @@ nav ul li a:hover {
     border-top: 6px solid #d42c2c;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-.hidden {
-    display: none;
 }
 
 @keyframes spin {
@@ -481,70 +502,4 @@ nav ul li a:hover {
 
 /response layout of ticket/
 @media screen and (max-width: 600px) {
-    .ticket-logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .ticket-header h2 {
-        font-size: 18px;
-    }
-
-    .ticket-card {
-        padding: 15px;
-    }
-}
-
-/ticket open ,close ticket button/
-/* Booking Form Styles */
-.booking-container {
-    padding: 20px;
-    text-align: center;
-}
-
-/* Ticket Card */
-.ticket-card {
-    background: #fff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Styles for Ticket */
-.ticket-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.ticket-logo-container {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.ticket-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-/* Ticket Body */
-.ticket-body p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.ticket-body strong {
-    font-weight: bold;
-}
-
-/* Ticket Actions */
-.ticket-actions {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.print-btn, .download-btn {
-    background-color: #4CAF50;
-    
-}
+    .
