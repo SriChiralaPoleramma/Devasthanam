@@ -145,5 +145,239 @@
         });
     </script>
     <script src="js/donations.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book online tickets for monthly and one-time poojas at Sri Poleramma Temple, Chirala. శ్రీ పోలేరమ్మ తల్లి దేవస్థానంలో నెలసరి మరియు ఒక్కసారి పూజల కోసం ఆన్‌లైన్ టిక్కెట్ల బుకింగ్ చేయండి." />
+    <title>Sri Poleramma Temple - E-Ticket</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --temple-red: #b30000;
+            --temple-gold: #ffcc00;
+            --text-main: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Ticket Container */
+        #ticket-wrapper {
+            width: 380px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 2px solid var(--temple-red);
+        }
+
+        /* Header Section */
+        .header {
+            background-color: var(--temple-red);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-bottom: 4px solid var(--temple-gold);
+        }
+
+        .header-logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            padding: 3px;
+            margin-bottom: 8px;
+        }
+
+        .header h1 { margin: 0; font-size: 1.2rem; }
+        .header h2 { margin: 5px 0 0; font-size: 1rem; font-weight: normal; }
+
+        /* Body Section */
+        .ticket-content {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .info-block {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .value {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-top: 3px;
+        }
+
+        .telugu-text {
+            color: var(--temple-red);
+            font-size: 0.9rem;
+        }
+
+        /* Footer/QR Section */
+        .qr-area {
+            background-color: #fff9f0;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px dashed #ccc;
+        }
+
+        #qrcode {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Button */
+        .download-btn {
+            margin-top: 25px;
+            width: 380px;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .download-btn:hover { background-color: #219150; }
+    </style>
+</head>
+<body>
+
+    <div id="ticket-wrapper">
+        <div class="header">
+            <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="header-logo">
+            <h1>Sri Poleramma Temple, Chirala</h1>
+            <h2>శ్రీ పోలేరమ్మ తల్లి దేవస్థానం, చీరాల</h2>
+        </div>
+
+        <div class="ticket-content">
+            <div class="info-block">
+                <div class="label">
+                    <span>Devotee Name</span>
+                    <span class="telugu-text">భక్తుని పేరు</span>
+                </div>
+                <div class="value">Srinivas Rao</div>
+            </div>
+
+            <div class="info-block">
+                <div class="label">
+                    <span>Pooja Type</span>
+                    <span class="telugu-text">పూజ రకం</span>
+                </div>
+                <div class="value">Monthly Pooja (నెలసరి పూజ)</div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+                <div class="info-block" style="width: 45%;">
+                    <div class="label">
+                        <span>Date</span>
+                        <span class="telugu-text">తేదీ</span>
+                    </div>
+                    <div class="value">30-01-2026</div>
+                </div>
+                <div class="info-block" style="width: 45%;">
+                    <div class="label">
+                        <span>Ticket ID</span>
+                        <span class="telugu-text">ఐడి</span>
+                    </div>
+                    <div class="value">POL-8821</div>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <div class="label">
+                    <span>Amount Paid</span>
+                    <span class="telugu-text">చెల్లించిన మొత్తం</span>
+                </div>
+                <div class="value">₹ 501.00</div>
+            </div>
+        </div>
+
+        <div class="qr-area">
+            <div id="qrcode"></div>
+            <div class="label" style="justify-content: center; gap: 10px;">
+                <span>Show this for Entry</span>
+                <span class="telugu-text">ప్రవేశం కోసం చూపండి</span>
+            </div>
+        </div>
+    </div>
+    <button class="download-btn" onclick="downloadPDF()">Download PDF Ticket (డౌన్‌లోడ్ టికెట్)</button>
+
+    <script>
+        // 1. Generate QR Code
+        window.onload = function() {
+            new QRCode(document.getElementById("qrcode"), {
+                text: "POL-8821-SRINIVAS",
+                width: 120,
+                height: 120
+            });
+        };
+
+        // 2. Download Logic
+        async function downloadPDF() {
+            const btn = document.querySelector('.download-btn');
+            btn.innerText = "Processing... (వేచి ఉండండి...)";
+            
+            const element = document.getElementById('ticket-wrapper');
+            const { jsPDF } = window.jspdf;
+
+            try {
+                // Capture the ticket as an image (this preserves Telugu fonts perfectly)
+                const canvas = await html2canvas(element, {
+                    scale: 3, 
+                    useCORS: true,
+                    backgroundColor: "#ffffff"
+                });
+
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const imgWidth = 100; // 10cm wide on A4
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                
+                // Position in center of A4
+                const xPos = (pdfWidth - imgWidth) / 2;
+                
+                pdf.addImage(imgData, 'PNG', xPos, 20, imgWidth, imgHeight);
+                pdf.save("Poleramma_Temple_Ticket.pdf");
+                
+                btn.innerText = "Download PDF Ticket (డౌన్‌లోడ్ టికెట్)";
+            } catch (error) {
+                console.error(error);
+                alert("Error generating PDF.");
+                btn.innerText = "Download PDF Ticket";
+            }
+        }
+    </script>
+</body>
+</html>
+
 </body>
 </html>
