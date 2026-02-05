@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔖 Ticket Booking | శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం</title>
+    <title>🔖 Ticket Booking | శ్రీ పోలేరమ్మ తల్లి దేవస్థానం</title>
     <link rel="stylesheet" href="CSS/booking.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -18,7 +18,6 @@
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="gallery.html">🖼️ Updates</a></li>
                 <li><a href="booking.html">🔖 Booking</a></li>
                 <li><a href="donations.html">💰 Donations</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
@@ -28,27 +27,30 @@
 
     <section class="booking-description-section">
         <p class="booking-description">
-            నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.  
-            📞 వివరాలకు: <a href="tel:9876543210"><strong>9876543210</strong></a>
+            నెలకు <b>రూ. 101/-</b> చెల్లించిన భక్తుల పేర్లతో నెల రోజుల పాటు ప్రత్యేక పూజలు జరుగుతాయి.<br>
+            📅 బుకింగ్స్ వచ్చే నెల నుండి మాత్రమే ప్రారంభమవుతాయి.
         </p>
     </section>
 
-    <section class="booking-container" id="booking">
+    <section class="booking-container">
         <div class="booking-form">
             <h2>📜 నెలవారీ పూజా బుకింగ్</h2>
-            <form id="monthlyForm" novalidate>
+            <form id="monthlyForm">
                 <label>👤 పేరు</label>
                 <input type="text" id="monthlyName" required placeholder="మీ పేరు" />
+                
                 <label>📞 ఫోన్ నంబర్</label>
-                <input type="tel" id="monthlyPhone" required placeholder="10 అంకెల నంబర్" />
+                <input type="tel" id="monthlyPhone" required pattern="[0-9]{10}" placeholder="10 అంకెల నంబర్" />
+                
                 <label>🕉️ గోత్రం</label>
-                <input type="text" id="monthlyGothram" placeholder="ఉదా: వాసిష్ఠ" />
-                <label>👪 కుటుంబ సభ్యులు</label>
-                <textarea id="monthlyFamily" rows="2" placeholder="పేర్లు"></textarea>
-                <label>📅 ప్రారంభ నెల</label>
+                <input type="text" id="monthlyGothram" placeholder="గోత్రం" />
+                
+                <label>📅 ప్రారంభ నెల (Start Month)</label>
                 <input type="month" id="startMonth" required />
-                <label>📅 ముగింపు నెల</label>
+                
+                <label>📅 ముగింపు నెల (End Month)</label>
                 <input type="month" id="endMonth" required />
+                
                 <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి</button>
             </form>
         </div>
@@ -57,18 +59,21 @@
             <div id="captureArea" class="ticket-card">
                 <div class="ticket-header">
                     <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="ticket-logo-small" />
-                    <h3>శ్రీ పోలేరమ్మ తల్లి దేవస్థానం</h3>
+                    <h3>శ్రీ పోలేరమ్మ తల్లి దేవస్థానం, చీరాల</h3>
                     <p class="booking-date-label">బుకింగ్ తేదీ: <span id="displayDate"></span></p>
                 </div>
                 <div class="ticket-body">
-                    <p><strong>🔖 ID:</strong> <span id="displayBookingID"></span></p>
+                    <p><strong>🔖 బుకింగ్ ID:</strong> <span id="displayBookingID"></span></p>
                     <p><strong>👤 పేరు:</strong> <span id="displayName"></span></p>
                     <p><strong>📞 ఫోన్:</strong> <span id="displayPhone"></span></p>
                     <p><strong>🕉️ గోత్రం:</strong> <span id="displayGothram"></span></p>
                     <p><strong>📅 కాలం:</strong> <span id="displayPeriod"></span></p>
+                    <div class="amount-highlight">
+                        <strong>💰 మొత్తం అమౌంట్:</strong> ₹<span id="displayAmount"></span>/-
+                    </div>
                 </div>
                 <div class="ticket-footer">
-                    <p>🙏 అమ్మవారి కృపా కటాక్ష వీక్షణలు మీకు కలగాలని కోరుకుంటున్నాము.</p>
+                    <p>🙏 అమ్మవారి ఆశీస్సులు మీకు కలగాలని కోరుకుంటున్నాము.</p>
                 </div>
             </div>
 
@@ -88,4 +93,4 @@
     <script src="js/l.js"></script>
 </body>
                     </html>
-                        
+    
