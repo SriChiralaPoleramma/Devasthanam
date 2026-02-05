@@ -1,33 +1,38 @@
-/* 🌸 General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: url('../images/temple-bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
+/* 🌸 General & Global Styling */
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: #f4f4f4; 
+    margin: 0; 
     padding: 0;
+    text-align: center; 
     color: #333;
     line-height: 1.6;
 }
 
-/* 🌿 Header Styling */
-header {
-    background: linear-gradient(to right, #ff9800, #e65100);
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-    border-bottom: 5px solid #ff6f00;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* 🌿 Header & Logo Styling */
+header { 
+    background: linear-gradient(to right, #ff9800, #e65100); 
+    color: white; 
+    padding: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
 }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 5px 20px;
+.logo-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.header-logo { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    object-fit: cover;
 }
 
 .logo-container h1 {
@@ -35,36 +40,26 @@ header {
     margin: 0;
 }
 
-.header-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
 /* 🏠 Navigation Bar */
-nav {
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+nav ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 10px 0 0 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
     flex-wrap: wrap;
 }
 
-nav ul li a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px;
-    border-radius: 20px;
-    transition: 0.3s;
+nav ul li a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 14px; 
+    background: rgba(0,0,0,0.1); 
+    padding: 8px 15px; 
+    border-radius: 20px; 
+    transition: 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -72,64 +67,48 @@ nav ul li a:hover {
     color: #e65100;
 }
 
-/* Booking Description Section */
-.booking-description-section {
-    background: linear-gradient(135deg, #ff9800, #ff5722);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+/* 📜 Booking Description Section */
+.booking-description-section { 
+    background: #e65100; 
+    color: white; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
 }
 
 .booking-description {
-    font-size: 18px;
+    font-size: 16px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Booking Container & Form */
-.booking-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 30px;
-}
-
-.booking-form {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    border-top: 5px solid #ff9800;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
-    max-width: 450px;
-    width: 100%;
-}
-
-.booking-form h2 {
-    color: #e65100;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
+/* 📋 Booking Form Styling */
+.booking-form { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    max-width: 450px; 
+    margin: 20px auto; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
+    text-align: left; 
 }
 
 .booking-form label {
     display: block;
-    margin-top: 15px;
     font-weight: 600;
+    margin-top: 10px;
     color: #555;
 }
 
-.booking-form input, .booking-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-    box-sizing: border-box;
+.booking-form input, .booking-form textarea { 
+    width: 100%; 
+    padding: 12px; 
+    margin: 8px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    font-family: inherit;
 }
 
 .booking-form input:focus {
@@ -138,18 +117,18 @@ nav ul li a:hover {
     background: #fffef0;
 }
 
-.monthly-btn {
-    width: 100%;
-    background: #ff9800;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px;
-    margin-top: 25px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
+.monthly-btn { 
+    width: 100%; 
+    background: #ff9800; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    font-size: 18px; 
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .monthly-btn:hover {
@@ -158,35 +137,33 @@ nav ul li a:hover {
 }
 
 /* 🎟️ Ticket Card Styling */
-.ticket-card {
-    background: #fff;
-    border: 2px solid #ff9800;
-    border-radius: 12px;
-    padding: 25px;
-    max-width: 380px;
-    margin: 0 auto;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
+.ticket-card { 
+    background: white; 
+    border: 2px solid #ff9800; 
+    border-radius: 15px; 
+    padding: 25px; 
+    max-width: 380px; 
+    margin: 20px auto; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    text-align: left; 
 }
 
-.ticket-header {
-    text-align: center;
-    border-bottom: 2px dashed #ff9800;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+.ticket-header { 
+    text-align: center; 
+    border-bottom: 2px dashed #ff9800; 
+    padding-bottom: 10px; 
+    margin-bottom: 15px;
 }
 
 .ticket-logo-small { 
     width: 60px; 
     height: 60px;
     border-radius: 50%; 
-    margin-bottom: 10px;
+    object-fit: cover;
 }
 
 .ticket-header h3 {
-    margin: 5px 0;
+    margin: 10px 0 5px 0;
     color: #b34a00;
     font-size: 18px;
 }
@@ -194,12 +171,13 @@ nav ul li a:hover {
 .booking-date-label {
     font-size: 12px;
     color: #888;
-    margin-top: 5px;
+    text-align: center;
+    display: block;
 }
 
 .ticket-body p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 15px;
     border-bottom: 1px solid #fff3e0;
     padding-bottom: 5px;
 }
@@ -210,6 +188,19 @@ nav ul li a:hover {
     float: right;
 }
 
+/* 💰 Amount Highlight */
+.amount-highlight { 
+    background: #fff3e0; 
+    padding: 12px; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    font-size: 18px; 
+    color: #e65100; 
+    text-align: center; 
+    font-weight: bold;
+    border: 1px solid #ffe0b2;
+}
+
 .ticket-footer {
     text-align: center;
     margin-top: 15px;
@@ -218,22 +209,22 @@ nav ul li a:hover {
     font-style: italic;
 }
 
-/* 📱 Action Buttons Grid */
-.ticket-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 25px auto;
-    max-width: 380px;
+/* 📱 Ticket Action Buttons */
+.ticket-actions { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    max-width: 380px; 
+    margin: 0 auto; 
 }
 
-.act-btn {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.act-btn { 
+    padding: 12px; 
+    border: none; 
+    border-radius: 8px; 
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer; 
     font-size: 14px;
     transition: 0.3s;
     display: flex;
@@ -242,8 +233,8 @@ nav ul li a:hover {
     gap: 5px;
 }
 
-.btn-save { background: #2196F3; }
-.btn-wa { background: #25D366; }
+.btn-save { background: #2196f3; }
+.btn-wa { background: #25d366; }
 .btn-share { background: #9c27b0; }
 .btn-print { background: #607d8b; }
 
@@ -252,63 +243,64 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-.close-btn {
-    background: #f44336;
-    color: white;
-    padding: 12px;
-    border: none;
-    width: 100%;
-    max-width: 380px;
-    border-radius: 8px;
-    cursor: pointer;
+.close-btn { 
+    width: 100%; 
+    max-width: 380px; 
+    background: #f44336; 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    margin: 10px auto; 
+    border-radius: 8px; 
+    cursor: pointer; 
     font-weight: bold;
-    margin: 0 auto;
     display: block;
 }
 
-/* 🎡 Spinner */
-.spinner {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 9999;
-    width: 60px;
-    height: 60px;
-    margin: -30px 0 0 -30px;
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #ff9800;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+/* 🎡 Spinner Styling */
+.spinner { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    border: 6px solid #f3f3f3; 
+    border-top: 6px solid #ff9800; 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    margin-top: -25px;
+    margin-left: -25px;
+    animation: spin 1s linear infinite; 
+    z-index: 2000;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes spin { 
+    0% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); } 
 }
 
 /* 🎫 Floating View Ticket Button */
-.floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #ff9800;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    border: none;
+.floating-btn { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background: #ff9800; 
+    color: white; 
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    border: none; 
     font-weight: bold;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
     cursor: pointer;
+    z-index: 1000;
     transition: 0.3s;
 }
 
 .floating-btn:hover {
+    transform: scale(1.05);
     background: #e65100;
-    transform: scale(1.1);
 }
 
-/* Utilities */
+/* 🛠️ Utility Classes */
 .hidden { display: none !important; }
 
 /* 📱 Responsive Adjustments */
@@ -322,7 +314,12 @@ nav ul li a:hover {
     }
 
     .booking-description-section {
-        padding: 20px;
+        padding: 15px;
         margin: 10px;
     }
-}
+    
+    .close-btn {
+        width: calc(100% - 40px);
+    }
+    }
+    
