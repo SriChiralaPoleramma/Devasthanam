@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔖 Ticket Booking | శ్రీ పోలేరమ్మ తల్లి దేవస్థానం</title>
-    <link rel="stylesheet" href="CSS/booking.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <link rel="stylesheet" href="CSS/booking.css" />
+    <style>
+        /* Pro-Specific Overrides for QR and Verification */
+        .qr-wrapper { background: white; padding: 10px; border-radius: 10px; border: 1px solid #eee; margin-top: 15px; display: inline-block; }
+        .hidden { display: none !important; }
+        .price-display { font-size: 24px; font-weight: 800; color: #e65100; margin: 10px 0; display: block; text-align: center; }
+        #verifyUI { padding: 40px 20px; background: #fffdf5; min-height: 80vh; }
+    </style>
 </head>
 <body>
-    <header>
+
+    <header id="mainHeader">
         <div class="logo-container">
             <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="header-logo" />
-            <h1>🌸 శ్రీ శ్రీ శ్రీ పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
+            <h1>🌸 శ్రీ పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
             <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="header-logo" />
         </div>
         <nav>
@@ -25,35 +39,47 @@
         </nav>
     </header>
 
-    <section class="booking-description-section">
+    <section id="promoBanner" class="booking-description-section">
         <p class="booking-description">
             నెలకు <b>రూ. 101/-</b> చెల్లించిన భక్తుల పేర్లతో నెల రోజుల పాటు ప్రత్యేక పూజలు జరుగుతాయి.<br>
             📅 బుకింగ్స్ వచ్చే నెల నుండి మాత్రమే ప్రారంభమవుతాయి.
         </p>
     </section>
 
-    <section class="booking-container">
-        <div class="booking-form">
-            <h2>📜 నెలవారీ పూజా బుకింగ్</h2>
-            <form id="monthlyForm">
-                <label>👤 పేరు</label>
-                <input type="text" id="monthlyName" required placeholder="మీ పేరు" />
-                
-                <label>📞 ఫోన్ నంబర్</label>
-                <input type="tel" id="monthlyPhone" required pattern="[0-9]{10}" placeholder="10 అంకెల నంబర్" />
-                
-                <label>🕉️ గోత్రం</label>
-                <input type="text" id="monthlyGothram" placeholder="గోత్రం" />
-                
-                <label>📅 ప్రారంభ నెల (Start Month)</label>
-                <input type="month" id="startMonth" required />
-                
-                <label>📅 ముగింపు నెల (End Month)</label>
-                <input type="month" id="endMonth" required />
-                
-                <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి</button>
-            </form>
-        </div>
+    <div class="container">
+        <section id="bookingForm" class="booking-container">
+            <div class="booking-form">
+                <h2>📜 నెలవారీ పూజా బుకింగ్</h2>
+                <form id="monthlyForm">
+                    <label>👤 పేరు</label>
+                    <input type="text" id="monthlyName" required placeholder="మీ పేరు" />
+                    
+                    <label>📞 ఫోన్ నంబర్</label>
+                    <input type="tel" id="monthlyPhone" required pattern="[0-9]{10}" placeholder="10 అంకెల నంబర్" />
+                    
+                    <label>🕉️ గోత్రం</label>
+                    <input type="text" id="monthlyGothram" placeholder="గోత్రం" />
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label>📅 ప్రారంభ నెల</label>
+                            <input type="month" id="startMonth" required />
+                        </div>
+                        <div>
+                            <label>📅 ముగింపు నెల</label>
+                            <input type="month" id="endMonth" required />
+                        </div>
+                    </div>
+
+                    <div class="amount-highlight">
+                        <span id="livePrice">₹ 101</span>
+                        <p style="font-size: 12px; margin: 0;" id="monthCount">1 Month Selection</p>
+                    </div>
+                    
+                    <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి & Receipt పొందండి</button>
+                </form>
+            </div>
+        </section>
 
         <section id="bookingSuccessDetails" class="booking-success-section hidden">
             <div id="captureArea" class="ticket-card">
@@ -69,8 +95,11 @@
                     <p><strong>🕉️ గోత్రం:</strong> <span id="displayGothram"></span></p>
                     <p><strong>📅 కాలం:</strong> <span id="displayPeriod"></span></p>
                     <div class="amount-highlight">
-                        <strong>💰 మొత్తం అమౌంట్:</strong> ₹<span id="displayAmount"></span>/-
+                        <strong>💰 మొత్తం:</strong> ₹<span id="displayAmount"></span>/-
                     </div>
+                    <center>
+                        <div class="qr-wrapper"><div id="qrcode"></div></div>
+                    </center>
                 </div>
                 <div class="ticket-footer">
                     <p>🙏 అమ్మవారి ఆశీస్సులు మీకు కలగాలని కోరుకుంటున్నాము.</p>
@@ -78,19 +107,29 @@
             </div>
 
             <div class="ticket-actions">
-                <button onclick="saveAsImage()" class="act-btn btn-save">🖼️ Save Image</button>
-                <button onclick="shareOnWhatsApp()" class="act-btn btn-wa">💬 WhatsApp</button>
-                <button onclick="shareNative()" class="act-btn btn-share">🔗 Share</button>
-                <button onclick="window.print()" class="act-btn btn-print">🖨️ Print</button>
+                <button onclick="saveAsImage()" class="act-btn btn-save"><i class="fas fa-image"></i> Save Image</button>
+                <button onclick="shareOnWhatsApp()" class="act-btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                <button onclick="shareNative()" class="act-btn btn-share"><i class="fas fa-share-nodes"></i> Share</button>
+                <button onclick="window.print()" class="act-btn btn-print"><i class="fas fa-print"></i> Print</button>
             </div>
             <button id="closeTicketBtn" class="close-btn">❌ Close Ticket</button>
         </section>
-    </section>
+
+        <section id="verifyUI" class="hidden">
+            <div class="ticket-card" style="border-top: 8px solid green;">
+                <center><i class="fas fa-check-circle" style="color:green; font-size: 40px;"></i></center>
+                <h3 style="text-align:center; color:green;">Verified Temple Record</h3>
+                <hr>
+                <div id="vDetails"></div>
+            </div>
+            <button onclick="location.href='booking.html'" class="monthly-btn">Go to Bookings</button>
+        </section>
+    </div>
 
     <div id="spinner" class="spinner hidden"></div>
     <button id="openTicketBtn" class="floating-btn hidden">🎫 View Ticket</button>
 
     <script src="js/l.js"></script>
 </body>
-                    </html>
-    
+    </html>
+                        
