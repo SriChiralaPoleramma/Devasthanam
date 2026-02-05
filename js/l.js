@@ -1,32 +1,44 @@
 const monthlyScriptURL = 'https://script.google.com/macros/s/AKfycbzvS08vYfbQh8wv00gnOChZuATnmpNkiKFWrvlAfsEsecqcnu99ojvBq1DSrGRlqCU3/exec';
 
-// Set Minimum Date to NEXT MONTH
+// Set Minimum Date & Handle Price Change
 window.addEventListener('DOMContentLoaded', () => {
     const startInput = document.getElementById('startMonth');
     const endInput = document.getElementById('endMonth');
     
     const today = new Date();
-    today.setMonth(today.getMonth() + 1); // Move to next month
-    const nextMonthStr = today.toISOString().slice(0, 7); // YYYY-MM
+    today.setMonth(today.getMonth() + 1); 
+    const nextMonthStr = today.toISOString().slice(0, 7); 
     
     startInput.value = nextMonthStr;
     startInput.min = nextMonthStr;
     endInput.min = nextMonthStr;
+
+    // QR & Verification Interceptor
+    checkVerification();
+
+    [startInput, endInput].forEach(input => {
+        input.addEventListener('change', () => {
+            const total = calculateTotal(startInput.value, endInput.value);
+            document.getElementById('livePrice').innerText = `₹ ${total}`;
+            document.getElementById('monthCount').innerText = `${total/101} Month(s) Seva`;
+        });
+    });
 });
 
-// Calculate Amount: ₹101 per month (including both months)
 function calculateTotal(start, end) {
+    if(!start || !end) return 101;
     const s = new Date(start + "-01");
     const e = new Date(end + "-01");
     let months = (e.getFullYear() - s.getFullYear()) * 12;
     months -= s.getMonth();
     months += e.getMonth();
-    const totalMonths = months <= 0 ? 1 : months + 1;
+    const totalMonths = months < 0 ? 1 : months + 1;
     return totalMonths * 101;
 }
 
 function showTicket(data) {
     const amount = calculateTotal(data.startMonth, data.endMonth);
+    const today = new Date().toLocaleDateString('te-IN');
     
     document.getElementById('displayBookingID').textContent = data.bookingID;
     document.getElementById('displayName').textContent = data.name;
@@ -34,38 +46,22 @@ function showTicket(data) {
     document.getElementById('displayGothram').textContent = data.gothram || 'N/A';
     document.getElementById('displayPeriod').textContent = `${data.startMonth} to ${data.endMonth}`;
     document.getElementById('displayAmount').textContent = amount;
-    document.getElementById('displayDate').textContent = new Date().toLocaleDateString('te-IN');
+    document.getElementById('displayDate').textContent = today;
 
+    // Generate QR Code with Verification Link
+    const verifyURL = window.location.origin + window.location.pathname + 
+        `?v=1&id=${data.bookingID}&n=${encodeURIComponent(data.name)}&p=${data.phone}&a=${amount}&dur=${data.startMonth}-${data.endMonth}`;
+    
+    document.getElementById("qrcode").innerHTML = "";
+    new QRCode(document.getElementById("qrcode"), { 
+        text: verifyURL, 
+        width: 128, 
+        height: 128,
+        colorDark: "#8e0000"
+    });
+
+    document.getElementById('bookingForm').classList.add('hidden');
     document.getElementById('bookingSuccessDetails').classList.remove('hidden');
-    document.getElementById('openTicketBtn').classList.add('hidden');
-}
-
-// WhatsApp Share Function
-function shareOnWhatsApp() {
-    const id = document.getElementById('displayBookingID').textContent;
-    const name = document.getElementById('displayName').textContent;
-    const amount = document.getElementById('displayAmount').textContent;
-    const period = document.getElementById('displayPeriod').textContent;
-    const phone = document.getElementById('displayPhone').textContent;
-
-    const text = `*శ్రీ పోలేరమ్మ తల్లి దేవస్థానం - పూజా టికెట్*%0A` +
-                 `🔖 ID: ${id}%0A` +
-                 `👤 పేరు: ${name}%0A` +
-                 `📅 కాలం: ${period}%0A` +
-                 `💰 మొత్తం అమౌంట్: ₹${amount}/-%0A` +
-                 `🙏 ధన్యవాదాలు.`;
-
-    window.open(`https://wa.me/91${phone}?text=${text}`, '_blank');
-}
-
-// Save as Image (Gallery)
-async function saveAsImage() {
-    const element = document.getElementById('captureArea');
-    const canvas = await html2canvas(element, { scale: 2, backgroundColor: "#ffffff" });
-    const link = document.createElement('a');
-    link.download = `Poleramma_Ticket_${document.getElementById('displayBookingID').textContent}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
 }
 
 // Form Submission
@@ -74,7 +70,7 @@ document.getElementById('monthlyForm').addEventListener('submit', async (e) => {
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
 
-    const bID = `POOJA-${Date.now().toString().slice(-6)}`;
+    const bID = `POL-${Date.now().toString().slice(-6)}`;
     const formData = new FormData();
     formData.append('BookingID', bID);
     formData.append('Name', document.getElementById('monthlyName').value);
@@ -104,13 +100,51 @@ document.getElementById('monthlyForm').addEventListener('submit', async (e) => {
     }
 });
 
-// View Toggle
-document.getElementById('closeTicketBtn').onclick = () => {
-    document.getElementById('bookingSuccessDetails').classList.add('hidden');
-    document.getElementById('openTicketBtn').classList.remove('hidden');
-};
-document.getElementById('openTicketBtn').onclick = () => {
-    document.getElementById('bookingSuccessDetails').classList.remove('hidden');
-    document.getElementById('openTicketBtn').classList.add('hidden');
-};
-                            
+// Verification Logic
+function checkVerification() {
+    const params = new URLSearchParams(window.location.search);
+    if(params.has('v')) {
+        document.getElementById('mainHeader').classList.add('hidden');
+        document.getElementById('promoBanner').classList.add('hidden');
+        document.getElementById('bookingForm').classList.add('hidden');
+        document.getElementById('verifyUI').classList.remove('hidden');
+        
+        document.getElementById('vDetails').innerHTML = `
+            <p><strong>ID:</strong> ${params.get('id')}</p>
+            <p><strong>Devotee:</strong> ${params.get('n')}</p>
+            <p><strong>Phone:</strong> ${params.get('p')}</p>
+            <p><strong>Duration:</strong> ${params.get('dur')}</p>
+            <p><strong>Amount:</strong> ₹${params.get('a')} (Paid)</p>
+        `;
+    }
+}
+
+// Shared Functions
+async function saveAsImage() {
+    const element = document.getElementById('captureArea');
+    const canvas = await html2canvas(element, { scale: 3 });
+    const link = document.createElement('a');
+    link.download = `Poleramma_Ticket.png`;
+    link.href = canvas.toDataURL();
+    link.click();
+}
+
+function shareOnWhatsApp() {
+    const id = document.getElementById('displayBookingID').textContent;
+    const name = document.getElementById('displayName').textContent;
+    const amount = document.getElementById('displayAmount').textContent;
+    const phone = document.getElementById('displayPhone').textContent;
+    const msg = `*శ్రీ పోలేరమ్మ తల్లి ఆలయం*%0A✅ బుకింగ్ విజయవంతమైంది%0A🔖 ID: ${id}%0A👤 భక్తుడు: ${name}%0A💰 మొత్తం: ₹${amount}/-`;
+    window.open(`https://wa.me/91${phone}?text=${msg}`, '_blank');
+}
+
+async function shareNative() {
+    const canvas = await html2canvas(document.getElementById('captureArea'));
+    canvas.toBlob(async (blob) => {
+        const file = new File([blob], 'ticket.png', { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], title: 'Temple Ticket' });
+        } else { Swal.fire("Notice", "Native sharing not supported here.", "info"); }
+    });
+                       }
+        
