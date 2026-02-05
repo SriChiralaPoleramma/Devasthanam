@@ -1,325 +1,505 @@
-/* 🌸 General & Global Styling */
-body { 
-    font-family: 'Poppins', sans-serif; 
-    background: #f4f4f4; 
-    margin: 0; 
-    padding: 0;
-    text-align: center; 
+/* 🌸 General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/temple-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 5px;
+    padding: 6px;
     color: #333;
     line-height: 1.6;
 }
 
-/* 🌿 Header & Logo Styling */
-header { 
-    background: linear-gradient(to right, #ff9800, #e65100); 
-    color: white; 
-    padding: 15px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-    position: sticky; 
-    top: 0; 
-    z-index: 100; 
+/* 🌿 Header Styling */
+header {
+    background: linear-gradient(to right, #ff9800, #e65100);
+    color: white;
+    padding: 2px 0;
+    text-align: center;
+    font-size: 8px;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 5px solid #ff6f00;
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 100;
 }
 
-.logo-container { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 15px; 
+/* 🏩 Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
 }
 
-.header-logo { 
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    border: 2px solid white; 
-    object-fit: cover;
+.header-logo {
+    width: 45px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform 0.3s;
 }
 
-.logo-container h1 {
-    font-size: 20px;
-    margin: 0;
+.header-logo:hover {
+    transform: scale(1.1);
 }
 
 /* 🏠 Navigation Bar */
-nav ul { 
-    list-style: none; 
-    padding: 0; 
-    margin: 10px 0 0 0;
-    display: flex; 
-    justify-content: center; 
-    gap: 15px; 
+nav {
+    margin-top: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
-nav ul li a { 
-    color: white; 
-    text-decoration: none; 
-    font-weight: bold; 
-    font-size: 14px; 
-    background: rgba(0,0,0,0.1); 
-    padding: 8px 15px; 
-    border-radius: 20px; 
-    transition: 0.3s ease;
+nav ul li {
+    display: inline;
+}
+
+/* ✨ Golden-Orange Navigation Buttons */
+nav ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff9800, #ffcc33);
+    padding: 2px 6px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid #d4a017;
 }
 
 nav ul li a:hover {
+    background: linear-gradient(45deg, #ff6f00, #ffb300);
+    transform: scale(1.08);
+}
+
+/* Booking Container */
+.booking-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 30px;
+    background: linear-gradient(to top right, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking Form */
+.booking-form {
     background: white;
-    color: #e65100;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #ff9800;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 100%;
+    transition: transform 0.3s ease;
 }
 
-/* 📜 Booking Description Section */
-.booking-description-section { 
-    background: #e65100; 
-    color: white; 
-    padding: 20px; 
-    margin: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-}
-
-.booking-description {
-    font-size: 16px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* 📋 Booking Form Styling */
-.booking-form { 
-    background: white; 
-    padding: 30px; 
-    border-radius: 15px; 
-    max-width: 450px; 
-    margin: 20px auto; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-    text-align: left; 
+.booking-form h2 {
+    background: #e65100;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .booking-form label {
     display: block;
-    font-weight: 600;
-    margin-top: 10px;
-    color: #555;
+    margin-top: 14px;
+    font-weight: bold;
 }
 
-.booking-form input, .booking-form textarea { 
-    width: 100%; 
-    padding: 12px; 
-    margin: 8px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 8px; 
-    box-sizing: border-box; 
-    font-family: inherit;
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: background 0.3s ease;
 }
 
-.booking-form input:focus {
+.booking-form input:focus,
+.booking-form select:focus {
+    background: #ffcc80;
     border-color: #ff9800;
-    outline: none;
-    background: #fffef0;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
 }
 
-.monthly-btn { 
-    width: 100%; 
-    background: #ff9800; 
-    color: white; 
-    border: none; 
-    padding: 15px; 
-    border-radius: 10px; 
-    font-weight: bold; 
-    cursor: pointer; 
-    font-size: 18px; 
-    transition: 0.3s;
-    margin-top: 10px;
+/* Button Styles */
+.monthly-btn,
+.one-time-btn {
+    background: #ff9800;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.monthly-btn:hover {
-    background: #e65100;
-    transform: translateY(-2px);
+.monthly-btn:hover,
+.one-time-btn:hover {
+    background: #63388e;
+    transform: scale(1.05);
 }
 
-/* 🎟️ Ticket Card Styling */
-.ticket-card { 
-    background: white; 
-    border: 2px solid #ff9800; 
-    border-radius: 15px; 
-    padding: 25px; 
-    max-width: 380px; 
-    margin: 20px auto; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-    text-align: left; 
+/* Spinner */
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #ff9800;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
 }
 
-.ticket-header { 
-    text-align: center; 
-    border-bottom: 2px dashed #ff9800; 
-    padding-bottom: 10px; 
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Booking Description Section Styling */
+.booking-description-section {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-description-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.booking-description-section h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.booking-description-section p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.booking-description-section .description-btn {
+    background-color: #ff5722;
+    color: white;
+    font-size: 18px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.booking-description-section .description-btn:hover {
+    background-color: #d84315;
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .booking-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .booking-form {
+        padding: 25px;
+        max-width: 100%;
+        transform: scale(0.98);
+    }
+
+    .booking-form input,
+    .booking-form select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .monthly-btn,
+    .one-time-btn {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .booking-description-section {
+        padding: 25px;
+    }
+
+    /* Arrange Open/Close buttons in a row on smaller screens */
+    #openTicketButton,
+    #closeTicketButton {
+        display: inline-block; /* Make them inline elements */
+        margin: 10px 5px; /* Add some spacing */
+        padding: 10px 15px; /* Adjust padding as needed */
+        font-size: 16px; /* Adjust font size */
+        border-radius: 8px; /* Add some rounded corners */
+        background-color: #007bff; /* Example button color */
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #openTicketButton:hover,
+    #closeTicketButton:hover {
+        background-color: #0056b3;
+    }
+}
+
+/* Large screen adjustments */
+@media screen and (min-width: 1024px) {
+    .booking-container {
+        gap: 40px;
+    }
+
+    .booking-form {
+        max-width: 480px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    h1, h2 {
+        font-size: 22px;
+    }
+
+    .booking-description-section h3 {
+        font-size: 40px;
+    }
+
+    .booking-description-section p {
+        font-size: 22px;
+    }
+
+    /* Arrange Open/Close buttons in a row on larger screens */
+    #openTicketButton,
+    #closeTicketButton {
+        display: inline-block; /* Make them inline elements */
+        margin: 15px 10px; /* Add some spacing */
+        padding: 12px 20px; /* Adjust padding as needed */
+        font-size: 18px; /* Adjust font size */
+        border-radius: 10px; /* Add some rounded corners */
+        background-color: #007bff; /* Example button color */
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #openTicketButton:hover,
+    #closeTicketButton:hover {
+        background-color: #0056b3;
+    }
+}
+
+/*ticket display */
+.hidden {
+    display: none;
+}
+
+.booking-success-section {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff5ec;
+    border: 2px solid #f3d2a0;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(200, 160, 120, 0.2);
+    font-size: 1.1rem;
+}
+
+.booking-success-section h2 {
+    color: #d86b00;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.booking-success-section p {
+    margin: 6px 0;
+}
+
+.print-btn {
+    background-color: #007a4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background-color: #005e3a;
+}
+
+/spinner details/
+/* Spinner Styling */
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #d42c2c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Booking Success Centered */
+.booking-success-section {
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    background: #fff3e0;
+    padding: 20px;
+    border: 2px solid #ffa726;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/ticket heading/
+/* Ticket Card Styling */
+.ticket-card {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff9f0;
+    border: 2px dashed #c17f2c;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.ticket-logo-container {
+    margin-bottom: 10px;
+}
+
+.ticket-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
 }
 
-.ticket-logo-small { 
-    width: 60px; 
-    height: 60px;
-    border-radius: 50%; 
-    object-fit: cover;
-}
-
-.ticket-header h3 {
-    margin: 10px 0 5px 0;
+.ticket-header h2 {
+    font-size: 22px;
+    font-weight: bold;
     color: #b34a00;
-    font-size: 18px;
-}
-
-.booking-date-label {
-    font-size: 12px;
-    color: #888;
-    text-align: center;
-    display: block;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .ticket-body p {
     margin: 10px 0;
-    font-size: 15px;
-    border-bottom: 1px solid #fff3e0;
-    padding-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .ticket-body span {
+    color: #222;
     font-weight: bold;
-    color: #333;
-    float: right;
 }
 
-/* 💰 Amount Highlight */
-.amount-highlight { 
-    background: #fff3e0; 
-    padding: 12px; 
-    border-radius: 8px; 
-    margin-top: 15px; 
-    font-size: 18px; 
-    color: #e65100; 
-    text-align: center; 
-    font-weight: bold;
-    border: 1px solid #ffe0b2;
-}
-
-.ticket-footer {
+.ticket-actions {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 15px;
-    font-size: 13px;
-    color: #e65100;
-    font-style: italic;
 }
 
-/* 📱 Ticket Action Buttons */
-.ticket-actions { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
-    max-width: 380px; 
-    margin: 0 auto; 
-}
-
-.act-btn { 
-    padding: 12px; 
-    border: none; 
-    border-radius: 8px; 
-    color: white; 
-    font-weight: bold; 
-    cursor: pointer; 
-    font-size: 14px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.btn-save { background: #2196f3; }
-.btn-wa { background: #25d366; }
-.btn-share { background: #9c27b0; }
-.btn-print { background: #607d8b; }
-
-.act-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-
-.close-btn { 
-    width: 100%; 
-    max-width: 380px; 
-    background: #f44336; 
-    color: white; 
-    border: none; 
-    padding: 12px; 
-    margin: 10px auto; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    font-weight: bold;
-    display: block;
-}
-
-/* 🎡 Spinner Styling */
-.spinner { 
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    border: 6px solid #f3f3f3; 
-    border-top: 6px solid #ff9800; 
-    border-radius: 50%; 
-    width: 50px; 
-    height: 50px; 
-    margin-top: -25px;
-    margin-left: -25px;
-    animation: spin 1s linear infinite; 
-    z-index: 2000;
-}
-
-@keyframes spin { 
-    0% { transform: rotate(0deg); } 
-    100% { transform: rotate(360deg); } 
-}
-
-/* 🎫 Floating View Ticket Button */
-.floating-btn { 
-    position: fixed; 
-    bottom: 20px; 
-    right: 20px; 
-    background: #ff9800; 
-    color: white; 
-    padding: 15px 25px; 
-    border-radius: 50px; 
-    border: none; 
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+.print-btn,
+.download-btn {
+    background: #c17f2c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 15px;
     cursor: pointer;
-    z-index: 1000;
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
-.floating-btn:hover {
-    transform: scale(1.05);
-    background: #e65100;
+.print-btn:hover,
+.download-btn:hover {
+    background: #a66012;
 }
 
-/* 🛠️ Utility Classes */
-.hidden { display: none !important; }
-
-/* 📱 Responsive Adjustments */
-@media (max-width: 480px) {
-    .ticket-actions {
-        grid-template-columns: 1fr;
-    }
-    
-    .logo-container h1 {
-        font-size: 16px;
-    }
-
-    .booking-description-section {
-        padding: 15px;
-        margin: 10px;
-    }
-    
-    .close-btn {
-        width: calc(100% - 40px);
-    }
-    }
-    
+/response layout of ticket/
+@media screen and (max-width: 600px) {
+    .
