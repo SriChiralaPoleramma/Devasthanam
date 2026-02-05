@@ -3,147 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔖 Ticket Booking | టికెట్ బుకింగ్ - శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం</title>
-    <meta name="description" content="Book online tickets for monthly and one-time poojas at Sri Poleramma Temple, Chirala. శ్రీ పోలేరమ్మ తల్లి దేవస్థానంలో నెలసరి మరియు ఒక్కసారి పూజల కోసం ఆన్‌లైన్ టిక్కెట్ల బుకింగ్ చేయండి." />
-    <meta name="keywords" content="Poleramma Temple Booking, Temple Pooja Ticket, Monthly Pooja Booking, One-time Pooja, Temple Ticket Online, Chirala Temple, Telugu Temple Booking, టికెట్ బుకింగ్, పూజా బుకింగ్, నెలసరి పూజా, ఒక్కసారి పూజా, పోలేరమ్మ తల్లి, చీరాల ఆలయం, పూజ టికెట్" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="te,en" />
-    <meta name="google-site-verification" content="" />
-    <meta property="og:title" content="🔖 Ticket Booking | టికెట్ బుకింగ్ - పోలేరమ్మ తల్లి దేవస్థానం" />
-    <meta property="og:description" content="Online ticket booking for monthly & one-time poojas at Chirala Poleramma Temple. నెలసరి మరియు ఒక్కసారి పూజల కోసం టికెట్ బుక్ చేయండి." />
-    <meta property="og:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
-    <meta property="og:url" content="https://poleramma.com/booking.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="te_IN" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ticket Booking | టికెట్ బుకింగ్ - Poleramma Temple, Chirala" />
-    <meta name="twitter:description" content="Book your pooja tickets online for Poleramma Temple, Chirala. Easy monthly and one-time bookings. ఒక క్లిక్‌తో టికెట్ బుక్ చేయండి!" />
-    <meta name="twitter:image" content="https://poleramma.com/templeimage/1742626228036%20(1).jpg" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Poleramma Temple Ticket Booking | పోలేరమ్మ ఆలయ టికెట్ బుకింగ్",
-      "description": "Book tickets online for monthly and one-time poojas at Sri Poleramma Temple, Chirala. Secure payment, instant confirmation. నెలసరి మరియు ఒక్కసారి పూజలకు టికెట్ బుకింగ్ చేయండి.",
-      "startDate": "2025-04-10",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "Sri Sri Sri Poleramma Temple",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Chirala",
-          "addressRegion": "Andhra Pradesh",
-          "addressCountry": "IN"
-        }
-      },
-      "image": [
-        "https://poleramma.com/templeimage/1742626228036%20(1).jpg"
-      ]
-    }
-    </script>
+    <title>🔖 Ticket Booking | శ్రీ శ్రీ శ్రీ చీరాల పోలేరమ్మ తల్లి దేవస్థానం</title>
     <link rel="stylesheet" href="CSS/booking.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo" />
-            <h1>🌸 శ్రీ శ్రీ శ్రీ  పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
-             <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="header-logo" />
-
+            <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="header-logo" />
+            <h1>🌸 శ్రీ శ్రీ శ్రీ పోలేరమ్మ తల్లి దేవస్థానం 🌸</h1>
+            <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="header-logo" />
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="gallery.html">🖼️ Temple Updates</a></li>
-                <li><a href="booking.html">🔖 PoojaTicket Booking</a></li>
+                <li><a href="gallery.html">🖼️ Updates</a></li>
+                <li><a href="booking.html">🔖 Booking</a></li>
                 <li><a href="donations.html">💰 Donations</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
-            
             </ul>
         </nav>
     </header>
-    <section class="booking-description-section" id="home">
-  <p class="booking-description">
-        నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో, వారి కుటుంబ సభ్యుల గోత్రనామాలతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.  
-        అమ్మవారి నెల ప్రసాదం కూడా అందించబడుతుంది.  
-        📅 మీ స్లాట్‌లను  బుక్ చేసుకోండి(Book your Slots).  
-        📞 వివరాలకు సంప్రదించండి: <a href="tel:9876543210"><strong>9876543210</strong></a>
-  </p>
-</section>
+
+    <section class="booking-description-section">
+        <p class="booking-description">
+            నెలకు రూ. 101/- చెల్లించిన భక్తుల పేర్లతో నెల రోజుల పాటు అమ్మవారి ప్రత్యేక పూజలు జరుగుతాయి.  
+            📞 వివరాలకు: <a href="tel:9876543210"><strong>9876543210</strong></a>
+        </p>
+    </section>
 
     <section class="booking-container" id="booking">
         <div class="booking-form">
             <h2>📜 నెలవారీ పూజా బుకింగ్</h2>
             <form id="monthlyForm" novalidate>
-                <label for="monthlyName">👤 పేరు</label>
-                <input type="text" id="monthlyName" required placeholder="మీ పేరు" aria-label="Enter your name" />
-                
-                <label for="monthlyPhone">📞 ఫోన్ నంబర్</label>
-                <input type="tel" id="monthlyPhone" required pattern="[0-9]{10}" placeholder="10 అంకెల నంబర్" aria-label="Enter your phone number" />
-                
-                <label for="monthlyGothram">🕉️ గోత్రం (Optional)</label>
+                <label>👤 పేరు</label>
+                <input type="text" id="monthlyName" required placeholder="మీ పేరు" />
+                <label>📞 ఫోన్ నంబర్</label>
+                <input type="tel" id="monthlyPhone" required placeholder="10 అంకెల నంబర్" />
+                <label>🕉️ గోత్రం</label>
                 <input type="text" id="monthlyGothram" placeholder="ఉదా: వాసిష్ఠ" />
-                
-                <label for="monthlyFamily">👪 కుటుంబ సభ్యుల పేర్లు (Optional)</label>
-                <textarea id="monthlyFamily" rows="2" placeholder="ఉదా: రాము, సీత, లక్ష్మి"></textarea>
-                
-                <label for="startMonth">📅 ప్రారంభ నెల</label>
+                <label>👪 కుటుంబ సభ్యులు</label>
+                <textarea id="monthlyFamily" rows="2" placeholder="పేర్లు"></textarea>
+                <label>📅 ప్రారంభ నెల</label>
                 <input type="month" id="startMonth" required />
-                
-                <label for="endMonth">📅 ముగింపు నెల</label>
+                <label>📅 ముగింపు నెల</label>
                 <input type="month" id="endMonth" required />
-                
                 <button type="submit" class="monthly-btn">🛕 బుక్ చేయండి</button>
             </form>
         </div>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <button id="openTicketButton" class="hidden">Open Ticket</button>
-        <button id="closeTicketButton" class="hidden">Close Ticket</button>
 
         <section id="bookingSuccessDetails" class="booking-success-section hidden">
-            <div class="ticket-card">
+            <div id="captureArea" class="ticket-card">
                 <div class="ticket-header">
-                    <div class="ticket-logo-container">
-                        <img src="templeimage/1742626228036 (1).jpg" alt="Temple Logo" class="ticket-logo" />
-                    </div>
-                    <h2>🎟️ Poleramma Temple - Ticket Booking Confirmation</h2>
+                    <img src="templeimage/1742626228036 (1).jpg" alt="Logo" class="ticket-logo-small" />
+                    <h3>శ్రీ పోలేరమ్మ తల్లి దేవస్థానం</h3>
+                    <p class="booking-date-label">బుకింగ్ తేదీ: <span id="displayDate"></span></p>
                 </div>
-
                 <div class="ticket-body">
-                    <p><strong>🔖 Booking ID:</strong> <span id="displayBookingID"></span></p>
-                    <p><strong>👤 Name:</strong> <span id="displayName"></span></p>
-                    <p><strong>📞 Phone:</strong> <span id="displayPhone"></span></p>
-                    <p><strong>🕉️ Gothram:</strong> <span id="displayGothram"></span></p>
-                    <p><strong>👪 Family Members:</strong> <span id="displayFamily"></span></p>
-                    <p><strong>📅 Start Month:</strong> <span id="displayStartMonth"></span></p>
-                    <p><strong>📅 End Month:</strong> <span id="displayEndMonth"></span></p>
+                    <p><strong>🔖 ID:</strong> <span id="displayBookingID"></span></p>
+                    <p><strong>👤 పేరు:</strong> <span id="displayName"></span></p>
+                    <p><strong>📞 ఫోన్:</strong> <span id="displayPhone"></span></p>
+                    <p><strong>🕉️ గోత్రం:</strong> <span id="displayGothram"></span></p>
+                    <p><strong>📅 కాలం:</strong> <span id="displayPeriod"></span></p>
                 </div>
-
-                <div class="ticket-actions">
-                    <button onclick="window.print()" class="print-btn">🖨️ Print Ticket</button>
-                    <button onclick="downloadTicket()" class="download-btn">⬇️ Download</button>
+                <div class="ticket-footer">
+                    <p>🙏 అమ్మవారి కృపా కటాక్ష వీక్షణలు మీకు కలగాలని కోరుకుంటున్నాము.</p>
                 </div>
             </div>
+
+            <div class="ticket-actions">
+                <button onclick="saveAsImage()" class="act-btn btn-save">🖼️ Save Image</button>
+                <button onclick="shareOnWhatsApp()" class="act-btn btn-wa">💬 WhatsApp</button>
+                <button onclick="shareNative()" class="act-btn btn-share">🔗 Share</button>
+                <button onclick="window.print()" class="act-btn btn-print">🖨️ Print</button>
+            </div>
+            <button id="closeTicketBtn" class="close-btn">❌ Close Ticket</button>
         </section>
     </section>
 
     <div id="spinner" class="spinner hidden"></div>
+    <button id="openTicketBtn" class="floating-btn hidden">🎫 View Ticket</button>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
     <script src="js/l.js"></script>
 </body>
-</html>
+                    </html>
+                        
