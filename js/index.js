@@ -1,6 +1,6 @@
-// Set the dates for the countdown (April 11, 2026 and April 12, 2026)
-const eventDate1 = new Date('April 11, 2026 00:00:00').getTime();
-const eventDate2 = new Date('April 12, 2026 00:00:00').getTime();
+// Set the dates for the countdown (April 4, 2026 and April 5, 2026)
+const eventDate1 = new Date('April 4, 2026 00:00:00').getTime();
+const eventDate2 = new Date('April 5, 2026 00:00:00').getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
@@ -20,17 +20,17 @@ function updateCountdown() {
     const minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
     const seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
 
-    // Display the result for April 11
+    // Display the result for April 4
     document.getElementById("timer").innerHTML = 
         `April 11 Countdown: ${days1}d ${hours1}h ${minutes1}m ${seconds1}s<br>
          April 12 Countdown: ${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
 
     // If the event date has passed
     if (distance1 < 0) {
-        document.getElementById("timer").innerHTML = "🎉 April 19 Event has passed!";
+        document.getElementById("timer").innerHTML = "🎉 April 4 Event has passed!";
     }
     if (distance2 < 0) {
-        document.getElementById("timer").innerHTML = "🎉 April 20 Event has passed!";
+        document.getElementById("timer").innerHTML = "🎉 April 5 Event has passed!";
     }
 }
 
