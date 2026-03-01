@@ -22,8 +22,8 @@ function updateCountdown() {
 
     // Display the result for April 4
     document.getElementById("timer").innerHTML = 
-        `April 11 Countdown: ${days1}d ${hours1}h ${minutes1}m ${seconds1}s<br>
-         April 12 Countdown: ${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
+        `April 04 Countdown: ${days1}d ${hours1}h ${minutes1}m ${seconds1}s<br>
+         April 05 Countdown: ${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
 
     // If the event date has passed
     if (distance1 < 0) {
