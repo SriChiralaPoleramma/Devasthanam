@@ -37,20 +37,36 @@ nav ul {
 
 nav ul li a {
     color: white;
-    padding: 8px;
     text-decoration: none;
+    padding: 10px;
 }
 
-/* Section */
+/* Sections */
 .donation-section {
     background: white;
     margin: 20px;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     text-align: center;
 }
 
-/* Buttons */
+/* Highlight box */
+.highlight {
+    background: #fff3cd;
+}
+
+/* Donation Box */
+.donation-box {
+    margin-top: 15px;
+}
+
+/* QR */
+.qr-section img {
+    width: 200px;
+    margin-top: 10px;
+}
+
+/* Button */
 button {
     background: #ff9800;
     color: white;
@@ -58,11 +74,20 @@ button {
     border: none;
     margin-top: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Form */
 form input, textarea {
     width: 90%;
     margin: 10px;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    background: #b30000;
+    color: white;
+    text-align: center;
     padding: 10px;
 }
