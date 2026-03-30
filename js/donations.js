@@ -75,4 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("❌ Form with ID 'donationForm' not found.");
     }
-});
+})
