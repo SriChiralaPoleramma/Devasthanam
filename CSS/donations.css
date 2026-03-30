@@ -1,17 +1,4 @@
-/* 🌸 General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: url('images/temple-bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 5px;
-    padding: 6px;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* 🌿 Header Styling */
-header {
-    background: linear-gradient(to right, #ff9800, #e65100);
+gradient(to right, #ff9800, #e65100);
     color: white;
     padding: 0px 0;
     text-align: center;
